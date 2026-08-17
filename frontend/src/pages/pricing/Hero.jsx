@@ -1,3 +1,39 @@
+import pricingEquity from "../../assets/images/pricingEquity.svg";
+import intradayTrades from "../../assets/images/intradayTrades.svg";
 export default function Hero() {
-  return <h2>Hero</h2>;
+  return (
+    <section className="container">
+      <div className="row p-5 border-bottom text-center">
+        <h1>Pricing</h1>
+        <p className="text-muted mt-3 fs-5">
+          Free equity investment and flat ₹20 trady and F&O trades
+        </p>
+        <div className="col-lg-4 p-5">
+          <img src={pricingEquity} className="img-fluid" />
+          <h1>Free equity delivery</h1>
+          <p>
+            All equity delivery investments (NSE, BSE), are absolutely free — ₹
+            0 brokerage.
+          </p>
+        </div>
+        <div className="col-lg-4 p-5">
+          <img src={intradayTrades} className="img-fluid" />
+          <h1>Intraday and F&O trades</h1>
+          <p>
+            Flat ₹ 20 or 0.03% (whichever is lower) per executed order on
+            intraday trades across equity, currency, and commodity trades. Flat
+            ₹20 on all option trades.
+          </p>
+        </div>
+        <div className="col-lg-4 p-5">
+          <img src={pricingEquity} className="img-fluid" />
+          <h1>Free direct MF</h1>
+          <p>
+            All direct mutual fund investments are absolutely free — ₹ 0
+            commissions & DP charges.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
