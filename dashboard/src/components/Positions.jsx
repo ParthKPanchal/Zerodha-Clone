@@ -18,13 +18,9 @@ const Positions = () => {
           </tr>
           {positions.map((stock, index) => {
             const curValue = stock.price * stock.qty;
-
             const profitLoss = curValue - stock.avg * stock.qty;
-
             const isProfit = profitLoss >= 0;
-
             const profClass = isProfit ? "profit" : "loss";
-
             const dayClass = stock.isLoss ? "loss" : "profit";
 
             return (

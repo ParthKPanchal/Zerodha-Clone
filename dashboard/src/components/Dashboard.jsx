@@ -13,7 +13,6 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <WatchList />
-
       <div className="content">
         <Routes>
           <Route exact path="/" element={<Summary />} />
