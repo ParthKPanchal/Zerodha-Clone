@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { watchlist } from "../data/data";
 import { Tooltip, Grow } from "@mui/material";
 import {
@@ -7,6 +7,7 @@ import {
   KeyboardArrowUp,
   MoreHoriz,
 } from "@mui/icons-material";
+import GeneralContext from "./GeneralContext";
 
 const WatchList = () => {
   return (
@@ -34,7 +35,6 @@ const WatchList = () => {
 
 export default WatchList;
 
-// WatchList Item
 const WatchListItem = ({ stock }) => {
   const [showWatchList, setShowWatchList] = useState(false);
 
@@ -70,47 +70,33 @@ const WatchListItem = ({ stock }) => {
 };
 
 const WatchListAction = ({ uid }) => {
+  const { openBuyWindow } = useContext(GeneralContext);
+
   return (
     <span className="actions">
-      <span>
-        <Tooltip
-          title="Buy (B)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button type="button" className="buy">
-            Buy
-          </button>
-        </Tooltip>
+      <button
+        type="button"
+        className="buy"
+        onClick={() => openBuyWindow(uid, "BUY")}
+      >
+        Buy
+      </button>
 
-        <Tooltip
-          title="Sell (S)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button type="button" className="sell">
-            Sell
-          </button>
-        </Tooltip>
+      <button
+        type="button"
+        className="sell"
+        onClick={() => openBuyWindow(uid, "SELL")}
+      >
+        Sell
+      </button>
 
-        <Tooltip
-          title="Analytics (A)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button className="action">
-            <BarChartOutlined className="icon" />
-          </button>
-        </Tooltip>
-        <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
-          <button className="action">
-            <MoreHoriz className="icon" />
-          </button>
-        </Tooltip>
-      </span>
+      <button type="button" className="action">
+        <BarChartOutlined className="icon" />
+      </button>
+
+      <button type="button" className="action">
+        <MoreHoriz className="icon" />
+      </button>
     </span>
   );
 };

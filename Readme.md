@@ -17,5 +17,19 @@ Basic File Setup
 Packages we will install is for Front End is
 
 React-Router-Dom
+axios
+
+Package we will install is for Back End is
+
+nodemon
+express
+cors
+body-parser
+mongoose
+passport
+passport-local
+passport-local-mangoose
+bcrypt
+jwt
 
 Raw Data were given by Apna College
