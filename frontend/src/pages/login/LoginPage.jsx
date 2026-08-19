@@ -25,13 +25,15 @@ export default function LoginPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        // "http://localhost:3000/login",
+        "https://zerodha-clone-backend-j86o.onrender.com/login",
         formData,
       );
 
       localStorage.setItem("token", response.data.token);
 
-      window.location.href = `http://localhost:5174/?token=${response.data.token}`;
+      // window.location.href = `http://localhost:5174/?token=${response.data.token}`;
+      window.location.href = `https://my-zerodha-clone-dashboard.netlify.app/?token=${response.data.token}`;
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
     } finally {

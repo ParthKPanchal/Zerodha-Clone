@@ -4,10 +4,13 @@ import axios from "axios";
 const Positions = () => {
   const [allPositions, setAllPosition] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/allPositions").then((res) => {
-      console.log(res.data);
-      setAllPosition(res.data);
-    });
+    // axios.get("http://localhost:3000/allPositions").then((res) => {
+    axios
+      .get("https://zerodha-clone-backend-j86o.onrender.com/allPositions")
+      .then((res) => {
+        console.log(res.data);
+        setAllPosition(res.data);
+      });
   }, []);
   return (
     <>

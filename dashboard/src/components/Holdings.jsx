@@ -7,10 +7,13 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/allHoldings").then((res) => {
-      // console.log(res.data);
-      setAllHoldings(res.data);
-    });
+    // axios.get("http://localhost:3000/allHoldings").then((res) => {
+    axios
+      .get("https://zerodha-clone-backend-j86o.onrender.com/allHoldings")
+      .then((res) => {
+        // console.log(res.data);
+        setAllHoldings(res.data);
+      });
   }, []);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
