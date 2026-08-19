@@ -32,7 +32,8 @@ export default function LoginPage() {
 
       localStorage.setItem("token", response.data.token);
 
-      window.location.href = `http://localhost:5174/?token=${response.data.token}`;
+      // window.location.href = `http://localhost:5174/?token=${response.data.token}`;
+      window.location.href = `https://my-zerodha-clone-dashboard.netlify.app/?token=${response.data.token}`;
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
     } finally {
