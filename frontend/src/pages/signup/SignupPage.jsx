@@ -26,7 +26,8 @@ export default function SignupPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/signup",
+        // "http://localhost:3000/signup",
+        "https://zerodha-clone-backend-j86o.onrender.com/signup",
         formData,
       );
 

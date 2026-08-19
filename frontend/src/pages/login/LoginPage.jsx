@@ -25,7 +25,8 @@ export default function LoginPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        // "http://localhost:3000/login",
+        "https://zerodha-clone-backend-j86o.onrender.com/login",
         formData,
       );
 
