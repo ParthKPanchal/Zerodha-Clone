@@ -1,9 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function SignupPage() {
+export default function LoginPage() {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -26,7 +25,7 @@ export default function SignupPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/signup",
+        "http://localhost:3000/login",
         formData,
       );
 
@@ -48,9 +47,10 @@ export default function SignupPage() {
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4 p-md-5">
                 <div className="text-center mb-4">
-                  <h2 className="mb-2">Create your account</h2>
+                  <h2 className="mb-2">Login to Zerodha</h2>
+
                   <p className="text-muted mb-0">
-                    Sign up to continue to Zerodha
+                    Enter your credentials to continue
                   </p>
                 </div>
 
@@ -61,20 +61,6 @@ export default function SignupPage() {
                 )}
 
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label className="form-label">Name</label>
-
-                    <input
-                      type="text"
-                      name="name"
-                      className="form-control"
-                      placeholder="Enter your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
                   <div className="mb-3">
                     <label className="form-label">Email</label>
 
@@ -108,15 +94,15 @@ export default function SignupPage() {
                     className="btn btn-primary w-100"
                     disabled={loading}
                   >
-                    {loading ? "Creating Account..." : "Sign Up"}
+                    {loading ? "Logging in..." : "Login"}
                   </button>
                 </form>
 
                 <div className="text-center mt-4">
                   <p className="text-muted mb-0">
-                    Already have an account?{" "}
-                    <a href="/login" className="text-decoration-none">
-                      Login
+                    Don't have an account?{" "}
+                    <a href="/signup" className="text-decoration-none">
+                      Sign Up
                     </a>
                   </p>
                 </div>

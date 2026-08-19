@@ -1,2 +1,17 @@
+MongoDB Password
+
 V7Yn40M8oB0jaWuP
 panchalparth93_db_user
+
+User Model
+
+{
+  "message": "User registered successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTg0NDUwZDA0ZmMwZTEwZDViYTA0NTkiLCJlbWFpbCI6InBhcnRoQGdtYWlsLmNvbSIsImlhdCI6MTc4NzA1MzMyNSwiZXhwIjoxNzg3MTM5NzI1fQ.mINHACeVdOvwaR3a-gzyuX7bu9bYXeQjrDeVu1jWjoA",
+  "user": {
+    "id": "6a84450d04fc0e10d5ba0459",
+    "name": "Parth Panchal",
+    "email": "parth@gmail.com"
+    "password":"123456"
+  }
+}

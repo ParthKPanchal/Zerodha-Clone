@@ -30,6 +30,6 @@ passport
 passport-local
 passport-local-mangoose
 bcrypt
-jwt
+jsonwebtoken
 
 Raw Data were given by Apna College

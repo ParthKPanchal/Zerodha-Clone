@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+const user = JSON.parse(localStorage.getItem("user"));
+
+const userName = user?.name || "User";
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -46,7 +49,7 @@ const Menu = () => {
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="holdings"
+              to="/holdings"
               onClick={() => handleMenu(0)}
             >
               <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
@@ -69,7 +72,7 @@ const Menu = () => {
         <hr />
         <div className="profile" onClick={handleProfile}>
           <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <p className="username">{userName}</p>
         </div>
       </div>
     </div>
